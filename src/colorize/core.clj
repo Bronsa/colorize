@@ -9,7 +9,7 @@
                   :magenta 5
                   :cyan 6
                   :white 7
-                  :default 9})p
+                  :default 9})
 
 (def ansi-extra {:reset 0
                  :bold 1

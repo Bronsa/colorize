@@ -7,7 +7,7 @@ A simple library to color string output with ansi-codes.
 ```clojure
 (use 'colorize.core)
 
-(color :red "hey " "what's up")
+(color "hey" {:fg :red :bg black :blink true})
 (red "hi!")
 (cyan "what's " (green "going on?"))
 (cyan-bg "blah")
