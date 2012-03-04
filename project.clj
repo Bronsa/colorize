@@ -1,4 +1,3 @@
-(defproject colorize "0.1.1"
+(defproject bronsa/colorize "0.1.2"
   :description "Colorize console output"
-  :dependencies [[org.clojure/clojure "[1.2.1],[1.3.0]"]]
-  :dev-dependencies [[swank-clojure "1.3.3"]])
+  :dependencies [[org.clojure/clojure "[1.2.1,)"]])
