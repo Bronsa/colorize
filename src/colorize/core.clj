@@ -29,21 +29,16 @@
          (if-not (= :reset v)
            (ansi (:reset ansi-extra))))))
 
-(defn bg [string v]
-  (if (keyword? v)
-    (str (ansi (str 4 (v ansi-colors)))
-         string
-         (extra "" :reset))))
-
-(defn fg [string v]
-  (if (keyword? v)
-    (str (ansi (str 3 (v ansi-colors)))
-         string
-         (extra "" :reset))))
+(doseq [[f n] '{fg 3 bg 4}]
+  (eval `(defn ~f [~'string ~'v]
+           (if (keyword? ~'v)
+             (str (ansi (str ~n (~'v ansi-colors)))
+                  ~'string
+                  (extra "" :reset))))))
 
 (defn color [string options]
   (reduce (fn [cur [k v]]
-            (condp = k
+            (case k
               :bg (bg cur v)
               :fg (fg cur v)
               (if (and (ansi-extra k) v)
