@@ -2,25 +2,23 @@
 
 A simple library to color string output with ansi-codes.
 
+## Installation
+
+In Leiningen:
+
+```clojure
+:dependencies [[bronsa/colorize "0.2.0"]]
+```
+
 ## Usage
 
 ```clojure
-(use 'colorize.core)
-
-(color "hey" {:fg :red :bg black :blink true})
-(red "hi!")
-(cyan "what's " (green "going on?"))
-(cyan-bg "blah")
-(underline (bold "cool"))
-
-;;Available commands:
-[reset default white black red green blue yellow magenta cyan
- black-bg red-bg green-bg yellow-bg blue-bg magenta-bg cyan-bg white-bg
- underline italic bold strikethrough inverse]
+(require '[colorize.ansi :refer [colorize]])
+(colorize "hey" {:fg :red :bg black :extra [:bold :underline]})
 ```
 
 ## License
 
-Copyright (C) 2011 Chris Granger
+Copyright ® 2013 Bronsa
 
 Distributed under the Eclipse Public License, the same as Clojure.

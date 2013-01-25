@@ -1,3 +1,4 @@
-(defproject bronsa/colorize "0.1.2"
+(defproject bronsa/colorize "0.2.0"
   :description "Colorize console output"
-  :dependencies [[org.clojure/clojure "[1.2.1,)"]])
+  :url "https://github.com/Bronsa/colorize"
+  :dependencies [[org.clojure/clojure "1.4.0"]])
